@@ -7,21 +7,9 @@ $("button").click(function () {
 });
 
 const list = document.querySelectorAll("ul");
-list.forEach((x) =>
-  x.addEventListener("click", function (event) {
-    const element = event.target;
-    let iTag = element.tagName.toLowerCase();
-    if (iTag == "i") {
-      element.parentNode.remove();
-    }
-  })
-);
-
-// $("li").click(function () {
-
-//     // $(this).remove()
-
-//     // $(this).parent().remove()
-//     // $("li").eq(index).remove()
-//     alert("test")
-// });
+$("ul").on("click", function (event) {
+  // console.log(this)
+  if (event.target.tagName === "I") {
+    event.target.parentNode.remove();
+  }
+});
